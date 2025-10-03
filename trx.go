@@ -1,4 +1,4 @@
-package converter
+package trx
 
 import (
 	"github.com/unsafe0x0/trx/tools"
