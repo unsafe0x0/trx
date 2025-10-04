@@ -4,20 +4,22 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)
 ![Version](https://img.shields.io/badge/version-0.0.0-white)
 
-Minimal command line converters written in Go for various file formats.
+Minimal converters written in Go for various file formats.
 
 ## Project Structure
 
 - `go.mod`: Go module file specifying dependencies.
 - `go.sum`: Go module checksum file.
 - `readme.md`: This readme file.
-- `example/`: Directory containing example input and output files.
-- `trx/`: Module containing various file format converters.
+- `trx.go`: Main module containing the conversion functions.
+- `tools/`: Module containing various file format converters.
 
 ## Supported Converters
 
 - JSON to CSV
 - CSV to JSON
+- JSON to YAML
+- YAML to JSON
 
 ### JSON to CSV
 
@@ -34,6 +36,24 @@ if err != nil {
 err := trx.Csv2Json("input.csv", "output.json")
 if err != nil {
     fmt.Printf("Error converting CSV to JSON: %v\n", err)
+}
+```
+
+### JSON to YAML
+
+```go
+err := trx.Json2Yaml("input.json", "output.yaml")
+if err != nil {
+    fmt.Printf("Error converting JSON to YAML: %v\n", err)
+}
+```
+
+### YAML to JSON
+
+```go
+err := trx.Yaml2Json("input.yaml", "output.json")
+if err != nil {
+    fmt.Printf("Error converting YAML to JSON: %v\n", err)
 }
 ```
 
